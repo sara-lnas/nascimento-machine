@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Nascimento machine's</title>
+</head>
+
+<body>
+    <!-- HEADER PÁGINA-->
+    <div class="header">
+        <h1 class="titulo">Nascimento machine's</h1>
+    </div>
+
+    <div class="container">
+        <div class="content">
+            <div class="box">
+                <div id="container1">
+                    <p>Aceitamos apenas valores binários para conversão hexadecimal.</p>
+                    <h2>Digite um valor:</h2>
+                    <input type="text" id="inputValor">
+                    <h2>Converter:</h2>
+                    <select id="selectConversao">
+                        <option value="" data-default disabled selected> Selecione uma opção</option>
+                        <option value="Binário">Binário</option>
+                        <option value="Decimal">Decimal</option>
+                        <option value="Octal">Octal</option>
+                        <option value="Hexadecimal">Hexadecimal</option>
+                    </select>
+                    <br>
+                    <br>
+                    <center><button onclick="converter()">
+                            Converter
+                        </button> </center>
+                    <br>
+                    <br>
+                    <div id="textoDiv"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function converter() {
+                let valor = inputValor.value;
+                let de = selectConversao.value;
+
+                let binario = parseInt(valor, 2);
+                let octal = parseInt(valor, 8);
+                let decimal = parseInt(valor, 10);
+                let hexadecimal = parseInt(valor, 16);
+
+                if(valor == "") {
+                alert('Digite um valor correto seu Bobão!')
+                } else {
+                        if (de == "Binário") {
+                                textoDiv.innerHTML = ` 
+                                O valor convertido para Bińario: ${binario}                       <br>
+                                O valor convertido para Octal: ${octal}                           <br>
+                                O valor convertido para Hexadecimal: ${hexadecimal}               <br>
+                                `
+                        }
+                        else if (de == "Octal") {
+                                textoDiv.innerHTML = ` 
+                                O valor convertido para Bińario:${binario}                        <br>
+                                O valor convertido para Decimal: ${decimal}                       <br>
+                                O valor convertido para Hexadecimal: ${hexadecimal}               <br>
+                                `
+                        }
+                        else if (de == "Decimal") {
+                                textoDiv.innerHTML = ` 
+                                O valor convertido para Bińario: ${binario}                       <br>
+                                O valor convertido para Octal: ${octal}                           <br>
+                                O valor convertido para Hexadecimal: ${hexadecimal}               <br>
+                                `
+                        }
+                        else if (de == "Hexadecimal") {
+
+                                let hexaDecimal = Number(hexadecimal);
+                                let hexaOctal = hexadecimal.toString(8);
+                                let hexaBinaria = hexadecimal.toString(2);
+
+                                textoDiv.innerHTML = ` 
+                                O valor convertido para Bińario: ${hexaBinaria}                       <br>
+                                O valor convertido para Octal: ${hexaOctal}                           <br>
+                                O valor convertido para Decimal: ${hexaDecimal}                       <br>
+                                `
+                        }
+                        
+                }                
+        }   
+         
+    </script>
+
+</body>
+
+</html>

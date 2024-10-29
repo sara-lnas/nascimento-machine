@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --cor-primaria: #001118;
+    --cor-secundaria: #003E29;
+    --cor-terciaria: #2A6044;
+    --cor-titulo: #578d71;
+    --cor-texto: #e7faf5;
+} 
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url('https://conteudo.imguol.com.br/c/entretenimento/70/2021/05/25/codigo-binario-1621982130311_v2_900x506.jpg');
+    color: var(--cor-texto);
+}
+
+.header {
+    background-color: var(--cor-primaria);
+    border-bottom: 3px solid var(--cor-secundaria);
+    text-align: center;
+    padding: 1px 0;
+}
+
+.titulo {
+    font-family: 'B612 Mono', sans-serif;
+    color: var(--cor-titulo);
+    font-weight: 500;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 40px 20px;
+}
+
+.content {
+    background-color: var(--cor-primaria);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.box {
+    margin-bottom: 20px;
+}
+
+#container1 {
+    text-align: center;
+}
+
+.container .content .box #container1 p {
+    font-style: italic;
+    font-size: 17px;
+    color: #888;
+    padding: 10px;
+} 
+
+input,
+select,
+button {
+    padding: 8px;  
+    width: calc(70% - 16px);  
+    margin-bottom: 10px;
+    box-sizing: border-box; 
+    background-color: #011720b6;;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+}
+
+button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    font-size: 18px; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--cor-terciaria);
+    transition: background-color 0.5s;
+}
+
+#textoDiv {
+    font-weight: 700;
+}
