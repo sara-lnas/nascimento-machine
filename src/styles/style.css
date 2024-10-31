@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --cor-primaria: #001118;
+    --cor-secundaria: #003E29;
+    --cor-terciaria: #2A6044;
+    --cor-titulo: #578d71;
+    --cor-texto: #e7faf5;
+} 
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--cor-texto);
+}
+
+input {
+    color: var(--cor-texto);
+}
+
+/* body {
+    background-color: #36615f;
+    background-image: url(fundo.png);
+    background-position: center;  
+    background-size: 100%;  
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+body {
+    background-image: url('https://conteudo.imguol.com.br/c/entretenimento/70/2021/05/25/codigo-binario-1621982130311_v2_900x506.jpg');
+    /* background-position: center;  
+    background-size: 66%;   */
+    height: 50vw;
+
+}
+
+.header {
+    background-color: var(--cor-primaria);
+    border-bottom: 3px solid var(--cor-secundaria);
+    text-align: center;
+    padding: 1.5% 0;
+    position: relative;
+}
+
+.titulo {
+    font-family: 'B612 Mono', sans-serif;
+    color: var(--cor-titulo);
+    font-weight: 500;
+}
+
+
+/* ------------------------------------------ */
+.container {
+    max-width: 510px;
+    margin: 4% auto;
+}
+
+
+.content {
+    background-color: var(--cor-primaria);
+    padding: 30px 20px;
+    border: 4px solid red;
+    border-radius: 8px;
+    box-shadow: 0 14px 189px rgb(10, 128, 88);
+    margin-bottom: 8%;
+    /* padding: 20px; */
+    /* width: 700px; */
+    /* color: var(--cor-texto);
+    
+    padding: 13px; */
+    /* background-color: rgb(56, 95, 112); */
+    
+}
+
+
+.box {
+    border-radius: 10px;
+    /* padding: 10px;
+    min-width: 400px; */
+    padding: 2px;
+    background-color: rgb(212, 69, 26);
+    
+}
+
+.information {
+    margin-bottom: 20px;
+    background-color: #001118;
+}
+
+.information input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--cor-terciaria); 
+    font-size: 16px;
+    color: #417270;
+    font-weight: 500;
+}
+
+.content-principal {
+    background-color: rgb(100, 22, 173);
+}
+
+.resultado {
+    max-width: 500px;
+    /* display: none; */
+    /* display: block; */
+    /* padding: 20px; 
+    min-width: 340px; */
+    /* display: flex;
+    align-items: center;
+    justify-content: center; 
+    
+    
+     background-color: var(--cor-primaria);
+    padding: 30px 20px;
+    
+    border-radius: 8px;
+    box-shadow: 0 14px 18px rgb(1, 61, 51);
+    */
+    background-color: pink;
+    border: 3px solid red;
+    /* margin-top: 4%; */
+
+}
+
+.resultado-final {
+    /* display: block; */
+    font-family: 600;
+    color: var(--cor-titulo);
+    display: block;
+}
+
+
+
+
+.button {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    font-size: 18px; 
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 8px;  
+    width: calc(70% - 16px);  
+    margin-bottom: 10px;
+    margin-top: 30px;
+    box-sizing: border-box; 
+    cursor: pointer;
+
+    /* padding: 10px;    
+    border-radius: 15px; 
+    margin-left: 120px; */
+}
+
+.button:hover{
+    background-color: var(--cor-terciaria);
+    transition: background-color 0.5s;
+}
+
+
+
+.hidden {
+    display: none;
+}
+
+
+.result{
+    color: #af3232;
+}
+
+
+#select_baseConversao{
+    background-color: #011720;
+    color: rgb(255, 251, 251);
+    border-color: var(--cor-terciaria);
+    border-radius: 13px;
+    padding: 5px;
+    padding-right: 195px;
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: 600;
+    box-sizing: border-box; 
+    outline: none;
+}
+
+
+#output {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #D0D3D4;
+    border: 1px solid #63666A;
+    text-align: left;
+    display: none;
+}
+
+
+/*---------- CSS POP UP ----------*/
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.containerPopUp {
+    background-color: #d2d0d0;
+    margin: 15% auto;
+    padding: 50px;
+    border: 1px solid #36615f;
+    width: 80%;
+    max-width: 450px;
+    border-radius: 5px;
+}
+
+.close {
+    color: #e10808;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #36615f;
+    text-decoration: none;
+    cursor: pointer;
+}
+

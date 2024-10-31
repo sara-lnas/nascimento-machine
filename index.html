@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="src/styles/style.css">
+    <link rel="shortcut icon" href="/src/img/logo.png" type="image/x-icon">
     <title>Nascimento machine's</title>
 </head>
 
@@ -15,86 +15,266 @@
         <h1 class="titulo">Nascimento machine's</h1>
     </div>
 
+    
     <div class="container">
         <div class="content">
-            <div class="box">
-                <div id="container1">
-                    <p>Aceitamos apenas valores binários para conversão hexadecimal.</p>
-                    <h2>Digite um valor:</h2>
-                    <input type="text" id="inputValor">
-                    <h2>Converter:</h2>
-                    <select id="selectConversao">
-                        <option value="" data-default disabled selected> Selecione uma opção</option>
-                        <option value="Binário">Binário</option>
-                        <option value="Decimal">Decimal</option>
-                        <option value="Octal">Octal</option>
-                        <option value="Hexadecimal">Hexadecimal</option>
+            <div class="box"> 
+                <div class="information">
+                    <span>Informe um número</span>
+                    <input type="text" id="input_valorDesejado" placeholder="Digite o valor desejado">
+                </div>
+
+                <div class="content-principal">
+                    <span>Selecione a base para a conversão:</span>
+                    <select id="select_baseConversao">
+                        <option value="" data-default disabled selected> Escolher uma base</option>
+                        <option value="binario">Binário</option> 
+                        <option value="decimal">Decimal</option>
+                        <option value="octal">Octal</option>
+                        <option value="hexadecimal">Hexadecimal</option>
                     </select>
+                </div>
+
+                <span>Selecione as bases nas quais gostaria de ver a conversão:</span>
+                <div class="conteudo">
+                    <input id="convertBinario" onclick="aparecer_octal()" type="checkbox">
+                    <label for="convertBinario">Binário</label>
                     <br>
+                    <input id="convertDecimal" onclick="aparecer_hexa()" type="checkbox">
+                    <label for="convertDecimal">Decimal</label>
                     <br>
-                    <center><button onclick="converter()">
-                            Converter
-                        </button> </center>
+                    <input id="convertOctal" onclick="aparecer_bin()" type="checkbox">
+                    <label for="convertOctal">Octal</label>
                     <br>
+                    <input id="convertHexadecimal" onclick="aparecer_bin()" type="checkbox">
+                    <label for="convertHexadecimal">Hexadecimal</label>
                     <br>
-                    <div id="textoDiv"></div>
+                    <p id="btn"><button onclick="Converter()" class="button">Converter</button></p>
                 </div>
             </div>
         </div>
+        <div class="resultado">
+            <!-- <h2 class="resultado-final" id="h2_resultado_final">&gt; resultados</h2> -->
+            <h2 class="resultado-final" id="h2_resultado_final"></h2>
+            <img src="Binary2.png" width="1px" id="imagem"> 
+            <div id="show"></div> 
+        </div>
     </div>
 
-    <script>
-        function converter() {
-                let valor = inputValor.value;
-                let de = selectConversao.value;
 
-                let binario = parseInt(valor, 2);
-                let octal = parseInt(valor, 8);
-                let decimal = parseInt(valor, 10);
-                let hexadecimal = parseInt(valor, 16);
+    <!-- Div do Pop Up -->
+    <div id="myPopUp" class="modal"> <!-- modal é a classe para Pop Up-->
+        <div class="containerPopUp">
+            <span class="close">&times;</span>
+            <p> <h2>Olá, Bem Vindo(a) a Nascimento Machine's!😄</h2>
+                <br>
+                <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;"> Você já se encontrou atolado(a) em uma montanha de dados, tentando encontrar uma maneira de transformá-los em algo útil e compreensível? </span> <br><br>
+                 <h4>💡 Na Nascimento Machine's simplificamos esse processo para você de forma mais simples e moderna!</h4>
+            </p>
+        </div>
+    </div>
 
-                if(valor == "") {
-                alert('Digite um valor correto seu Bobão!')
-                } else {
-                        if (de == "Binário") {
-                                textoDiv.innerHTML = ` 
-                                O valor convertido para Bińario: ${binario}                       <br>
-                                O valor convertido para Octal: ${octal}                           <br>
-                                O valor convertido para Hexadecimal: ${hexadecimal}               <br>
-                                `
-                        }
-                        else if (de == "Octal") {
-                                textoDiv.innerHTML = ` 
-                                O valor convertido para Bińario:${binario}                        <br>
-                                O valor convertido para Decimal: ${decimal}                       <br>
-                                O valor convertido para Hexadecimal: ${hexadecimal}               <br>
-                                `
-                        }
-                        else if (de == "Decimal") {
-                                textoDiv.innerHTML = ` 
-                                O valor convertido para Bińario: ${binario}                       <br>
-                                O valor convertido para Octal: ${octal}                           <br>
-                                O valor convertido para Hexadecimal: ${hexadecimal}               <br>
-                                `
-                        }
-                        else if (de == "Hexadecimal") {
-
-                                let hexaDecimal = Number(hexadecimal);
-                                let hexaOctal = hexadecimal.toString(8);
-                                let hexaBinaria = hexadecimal.toString(2);
-
-                                textoDiv.innerHTML = ` 
-                                O valor convertido para Bińario: ${hexaBinaria}                       <br>
-                                O valor convertido para Octal: ${hexaOctal}                           <br>
-                                O valor convertido para Decimal: ${hexaDecimal}                       <br>
-                                `
-                        }
-                        
-                }                
-        }   
-         
-    </script>
-
+    <script src="src/js/script.js"></script>
 </body>
-
 </html>
+
+
+<!-- 
+<!--
+ARDUINO
+int pinoSensor = 7;
+const int LM35 = A5; // Define o pino que lera a saída do LM35
+float temperatura; // Variável que armazenará a temperatura medida
+
+void setup() {
+  pinMode(pinoSensor, INPUT);
+  Serial.begin(9600);
+}
+ 
+ 
+
+void loop() {
+  if(digitalRead(pinoSensor) == LOW){
+  Serial.print(1);
+  }
+  else {
+  Serial.print(0);
+  }
+  Serial.print(';');
+  temperatura = (float(analogRead(LM35))*5/(1023))/0.01;
+  Serial.println(temperatura);
+  delay(2000);
+}
+
+
+API
+// Importa os módulos necessários
+// não altere!
+const serialport = require('serialport'); // Módulo para comunicação serial
+const express = require('express'); // Módulo para criar um servidor web
+const mysql = require('mysql2'); // Módulo para conectar ao MySQL
+
+// Constantes para configurações
+// não altere!
+const SERIAL_BAUD_RATE = 9600;
+const SERVIDOR_PORTA = 3300;
+
+// Habilita ou desabilita a inserção de dados no banco de dados
+// false -> nao insere
+// true -> insere
+const HABILITAR_OPERACAO_INSERIR = true;
+
+// Função para comunicação serial
+const serial = async (
+    valoresLm35Temperatura,
+    valoresChave
+) => {
+    let poolBancoDados = ''
+
+    // Conexão com o banco de dados MySQL
+    poolBancoDados = mysql.createPool(
+        {
+            // altere!
+            // Credenciais do banco de dados
+            host: 'localhost',
+            user: 'XXXXXX',
+            password: '#XXXXXX',
+            database: 'arduino',
+            port: 3306
+        }
+    ).promise();
+
+    // Lista as portas seriais disponíveis e procura pelo Arduino
+    const portas = await serialport.SerialPort.list();
+    const portaArduino = portas.find((porta) => porta.vendorId == 2341 && porta.productId == 43);
+    if (!portaArduino) {
+        throw new Error('O arduino não foi encontrado em nenhuma porta serial');
+    }
+
+    // Configura a porta serial com o baud rate especificado
+    const arduino = new serialport.SerialPort(
+        {
+            path: portaArduino.path,
+            baudRate: SERIAL_BAUD_RATE
+        }
+    );
+
+    // Evento quando a porta serial é aberta
+    arduino.on('open', () => {
+        console.log(A leitura do arduino foi iniciada na porta $ {portaArduino.path} utilizando Baud Rate de $ {SERIAL_BAUD_RATE});
+    });
+
+    // Processa os dados recebidos do Arduino
+    arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
+        const valores = data.split(';');
+        const chave = parseInt(valores[0]);
+        const lm35Temperatura = parseFloat(valores[1]);
+
+
+        // Armazena os valores dos sensores nos arrays correspondentes
+        valoresLm35Temperatura.push(lm35Temperatura);
+        valoresChave.push(chave);
+
+        // Insere os dados no banco de dados (se habilitado)
+        if (HABILITAR_OPERACAO_INSERIR) {
+
+            // altere!
+            // Este insert irá inserir os dados na tabela "medida"
+            await poolBancoDados.execute(
+                'INSERT INTO temperatura_bloqueio (lm35_temperatura, chave) VALUES (?, ?)',
+                [lm35Temperatura, chave]
+               
+            );
+           
+            console.log("valores inseridos no banco: " + chave + ", " + lm35Temperatura)
+       
+        }
+       
+    });
+
+    // Evento para lidar com erros na comunicação serial
+    arduino.on('error', (mensagem) => {
+        console.error(Erro no arduino (Mensagem: $ {mensagem})
+    });
+}
+
+
+// não altere!
+// Função para criar e configurar o servidor web
+const servidor = (
+    valoresLm35Temperatura,
+    valoresChave
+) => {
+    const app = express();
+
+    // Configurações de CORS
+    app.use((request, response, next) => {
+        response.header('Access-Control-Allow-Origin', '*');
+        response.header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept');
+        next();
+    });
+
+    // Inicia o servidor na porta especificada
+    app.listen(SERVIDOR_PORTA, () => {
+        console.log(API executada com sucesso na porta $ {SERVIDOR_PORTA});
+    });
+
+    // Define os endpoints da API para cada tipo de sensor
+    app.get('/sensores/lm35/temperatura', (_, response) => {
+        return response.json(valoresLm35Temperatura);
+    });
+    app.get('/sensores/chave', (_, response) => {
+        return response.json(valoresChave);
+    });
+}
+
+// Função principal assíncrona para iniciar a comunicação serial e o servidor web
+(async () => {
+    const valoresLm35Temperatura = [];
+    const valoresChave = [];
+
+    // Inicia a comunicação serial
+    await serial(
+        valoresLm35Temperatura,
+        valoresChave
+    );
+
+    // Inicia o servidor web
+    servidor(
+        valoresLm35Temperatura,
+        valoresChave
+    );
+})();
+
+
+AVALIATIVA
+Qual é a distinção entre as portas 3300 e 3306?
+
+Enquanto a porta 3300 pode ser aplicada em diferentes serviços, ela tem a finalidade de hospedar os dados da API, a porta 3306 é um porta padrão para comunicação dos serviços MySQL, consultando e manipulando dados
+ 
+No index.html, como é feita a chamada à API externa chart.js? Onde é realizada essa chamada e onde um novo gráfico é criado?
+
+Dentro da tag ‘head’ é feito a importação da biblioteca do chart.js, logo após é adicionado a tag ‘canvas’ dentro da tag ‘body’, sendo definido onde os gráficos serão gerados, por fim definindo dentro de uma tag ‘script’ as configurações, valores da tabela e renderização do gráfico  
+
+Onde é possível ajustar o tamanho e o tipo de gráfico gerado?
+
+Dentro da variavel do sensor na tag script, você adiciona o tipo de gráfico por meio do comando new Chart, logo após definindo colunas, cores, tamanhos do eixo x e y, além da visualização dos dados do gráfico
+
+O que é representado pelo método 'get' no código main.js?
+
+Por esse comando, é definido o endpoint de cada tipo de sensor na API, pegando os dados dos sensores e sendo retornado o valor em json
+
+ 
+
+Por que é gerado um arquivo JSON e para que ele é utilizado?
+
+Arquivos json são utilizados para exportar informações em texto armazenados para outras aplicações web como o MySQL, sendo categorizado e organizado de uma maneira mais uniforme e leve
+
+ 
+
+Considerando que no código.ino a saída é  
+
+DHTH_temp; DHTH_umid; Luminosidade; LM35_temp; chave, explique como essa estrutura de dados (na forma de lista) é adicionada como um vetor na APINode. Demonstre como o código captura essa lista e a divide ordenadamente dentro de um vetor.
+
+Os valores capturados pelo arduino são armazenados pelo comando ‘.push’ e divididos pelo split com um (‘;’), onde os dados são separados e criando diferentes listas
+-->
