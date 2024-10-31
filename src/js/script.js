@@ -33,24 +33,23 @@ function Converter() {
 
     if (document.getElementById("convertDecimal").checked) {
         document.getElementById("show").style.display = "block";
-        outputHTML += `<p style="sans-serif; padding: 15px; background-color: #36615f; margin: 10px; border-radius: 10px; font-size: 15px;">Decimal: ${decimalValue}</p>`;
-    }
-    if (document.getElementById("convertHexadecimal").checked) {
-        document.getElementById("show").style.display = "block";
-        outputHTML += `Hexadecimal: ${decimalValue.toString(16).toUpperCase()}</p>`;
-    }
-    if (document.getElementById("convertOctal").checked) {
-        document.getElementById("show").style.display = "block";
-        outputHTML += `Octal: ${decimalValue.toString(8
-        )}</p>`;
+        outputHTML += `<p>Decimal: ${decimalValue}`;
     }
     if (document.getElementById("convertBinario").checked) {
         document.getElementById("show").style.display = "block";
-        outputHTML += `<p style="sans-serif; padding: 15px; background-color: #15672e; margin: 10px; border-radius: 10px; font-size: 15px;">Binário: ${decimalValue.toString(2
-        )}</p>`;
+        outputHTML += `<p>Binário: ${decimalValue.toString(2)}</p>`;
+    }
+    if (document.getElementById("convertOctal").checked) {
+        document.getElementById("show").style.display = "block";
+        outputHTML += `<p>Octal: ${decimalValue.toString(8)}</p>`;
+    }
+    if (document.getElementById("convertHexadecimal").checked) {
+        document.getElementById("show").style.display = "block";
+        outputHTML += `<p>Hexadecimal: ${decimalValue.toString(16).toUpperCase()}`;
     }
     show.innerHTML = outputHTML;
 
+    
     function validarEntrada(inputValue, inputBase) {
         var validChars = "";
 
