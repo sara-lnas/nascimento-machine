@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/67a8ae88-385f-4c05-bdac-2caecb508cea)# Nascimento machine's
+## Nascimento machine's
 ### Conversor de Bases Numéricas
 
 **O que é?**
@@ -34,12 +34,12 @@ Quer ajudar a melhorar o Nascimento machine's? Sinta-se à vontade para contribu
 
 ## Como usar:
 1. Clone este repositório: `git clone https://github.com/seu-usuario/RickMortyCharacterSearch.git`
-2. Abra o arquivo `index.html` em seu navegador.
-   * **Ou acesse o link:**  <i>[clique aqui](https://rickmortverse.vercel.app/) <br>
-   
-
-**Como usar:**
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github
+   git clone [https://github.com/sara-lnas/nascimento-machine.git
+
+
+2. Abra o arquivo `index.html` em seu navegador.
+   * **Ou acesse o link:**  <i>[clique aqui](https://rickmortverse.vercel.app/) <br>
+   

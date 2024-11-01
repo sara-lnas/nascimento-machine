@@ -278,6 +278,7 @@ body {
     cursor: pointer;
 }
 
+
 /* Responsividade */
 @media (max-width: 468px) {
     .header {
