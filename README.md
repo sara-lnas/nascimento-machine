@@ -39,6 +39,4 @@ Quer ajudar a melhorar o Nascimento machine's? Sinta-se à vontade para contribu
 
 
 2. Abra o arquivo `index.html` em seu navegador.
-   * **Ou acesse o link:**  <i>[clique aqui](https://rickmortverse.vercel.app/) <br>
-   
-https://github.com/sara-lnas/nascimento-machine.git
+   * **Ou acesse o link:**  <i>[clique aqui](https://nascimento-machines.vercel.app/) <br>
