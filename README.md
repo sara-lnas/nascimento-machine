@@ -33,9 +33,7 @@ Este projeto é um conversor de bases numéricas simples. Ele permite que você 
 Quer ajudar a melhorar o Nascimento machine's? Sinta-se à vontade para contribuir com o código no GitHub!
 
 ## Como usar:
-1. Clone este repositório: `git clone https://github.com/seu-usuario/RickMortyCharacterSearch.git`
-
-1. **Clone o repositório:**
+1. Clone o repositório:
    ```bash
    git clone [https://github.com/sara-lnas/nascimento-machine.git
 
@@ -43,3 +41,4 @@ Quer ajudar a melhorar o Nascimento machine's? Sinta-se à vontade para contribu
 2. Abra o arquivo `index.html` em seu navegador.
    * **Ou acesse o link:**  <i>[clique aqui](https://rickmortverse.vercel.app/) <br>
    
+https://github.com/sara-lnas/nascimento-machine.git
