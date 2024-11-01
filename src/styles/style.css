@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Cousine:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+/* Paleta de cores */
 :root {
     --cor-primaria: #001118;
     --cor-secundaria: #003E29;
@@ -8,221 +12,226 @@
     --cor-texto: #e7faf5;
 } 
 
-
 * {
     margin: 0;
     padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Cousine;
     color: var(--cor-texto);
 }
-
-input {
-    color: var(--cor-texto);
-}
-
-/* body {
-    background-color: #36615f;
-    background-image: url(fundo.png);
-    background-position: center;  
-    background-size: 100%;  
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 body {
     background-image: url('https://conteudo.imguol.com.br/c/entretenimento/70/2021/05/25/codigo-binario-1621982130311_v2_900x506.jpg');
-    /* background-position: center;  
-    background-size: 66%;   */
-    height: 50vw;
-
+    height: 49vw;
 }
 
 .header {
     background-color: var(--cor-primaria);
     border-bottom: 3px solid var(--cor-secundaria);
-    text-align: center;
     padding: 1.5% 0;
-    position: relative;
+    text-align: center;
 }
 
 .titulo {
     font-family: 'B612 Mono', sans-serif;
-    color: var(--cor-titulo);
     font-weight: 500;
+    color: var(--cor-titulo);
 }
 
-
-/* ------------------------------------------ */
+/* Início da caixa principal */
 .container {
-    max-width: 510px;
+    max-width: 550px;
     margin: 4% auto;
 }
 
-
 .content {
     background-color: var(--cor-primaria);
-    padding: 30px 20px;
-    border: 4px solid red;
+    padding: 28px 20px;
     border-radius: 8px;
     box-shadow: 0 14px 189px rgb(10, 128, 88);
-    margin-bottom: 8%;
-    /* padding: 20px; */
-    /* width: 700px; */
-    /* color: var(--cor-texto);
-    
-    padding: 13px; */
-    /* background-color: rgb(56, 95, 112); */
-    
+    margin-bottom: 7%;
 }
 
-
 .box {
-    border-radius: 10px;
-    /* padding: 10px;
-    min-width: 400px; */
-    padding: 2px;
-    background-color: rgb(212, 69, 26);
-    
+    padding: 5% 6%;
 }
 
 .information {
-    margin-bottom: 20px;
-    background-color: #001118;
+    margin-bottom: 8%;
 }
 
+.information-span {
+    font-family: 'B612 Mono', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cor-titulo);
+}
+
+/* Definição - input */
 .information input {
     background-color: transparent;
     border: none;
     outline: none;
-    border-bottom: 1px solid var(--cor-terciaria); 
-    font-size: 16px;
-    color: #417270;
+    border-bottom: 1.999px solid var(--cor-terciaria); 
+    font-size: 14px;
     font-weight: 500;
+    width: 202px;
+    color: #8d8b8b;
 }
 
 .content-principal {
-    background-color: rgb(100, 22, 173);
+    font-size: 15px;
+    margin-bottom: 6%;
 }
 
-.resultado {
-    max-width: 500px;
-    /* display: none; */
-    /* display: block; */
-    /* padding: 20px; 
-    min-width: 340px; */
-    /* display: flex;
-    align-items: center;
-    justify-content: center; 
-    
-    
-     background-color: var(--cor-primaria);
-    padding: 30px 20px;
-    
-    border-radius: 8px;
-    box-shadow: 0 14px 18px rgb(1, 61, 51);
-    */
-    background-color: pink;
-    border: 3px solid red;
-    /* margin-top: 4%; */
-
-}
-
-.resultado-final {
-    /* display: block; */
-    font-family: 600;
+/* Definiçao - select */
+#select_baseConversao{
+    background-color: var(--cor-primaria);
     color: var(--cor-titulo);
-    display: block;
+    border-color: var(--cor-terciaria);
+    border-radius: 9px;
+    padding: 5px;
+    padding-right: 120px;
+    margin: 9px 0 6px 0;
+    font-size: 15px;
+    font-weight: 600;
+    box-sizing: border-box; 
+    outline: none; 
 }
 
+/* Definição - checkbox ------------------------- */
+.check-convesao {
+    font-size: 15px;
+}
+
+.checkbox-wrapper-2 {
+    margin-top: 2%;
+}
+
+.checkbox-wrapper-2 .ikxBAC {
+    appearance: none;
+    background-color: transparent;
+    border: 1.999px solid var(--cor-titulo); 
+    border-radius: 22px;
+    flex-shrink: 0;
+    height: 20px;
+    margin: 4px 0 0 0;
+    position: relative;
+    width: 38px;
+}
+
+.checkbox-wrapper-2 .ikxBAC::before {
+    bottom: -6px;
+    content: "";
+    left: -6px;
+    right: -6px;
+    top: -6px;
+    position: absolute;
+}
+
+.checkbox-wrapper-2 .ikxBAC,
+.checkbox-wrapper-2 .ikxBAC::after {
+    transition: all 100ms ease-out;
+}
+
+.checkbox-wrapper-2 .ikxBAC::after {
+    background-color: var(--cor-titulo);
+    border-radius: 50%;
+    content: "";
+    height: 14px;
+    left: 3px;
+    top: 2px;
+    position: absolute;
+    width: 13px;
+}
+
+.checkbox-wrapper-2 input[type=checkbox] {
+    cursor: default;
+}
+
+.checkbox-wrapper-2 .ikxBAC:hover {
+    background-color: #0d222c;
+    transition-duration: 0.5s;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked {
+    background-color: var(--cor-titulo);
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked::after {
+    background-color: #fff;
+    left: 20px;
+}
+
+.checkbox-wrapper-2 :focus:not(.focus-visible) {
+    outline: 0;
+}
+
+.checkbox-wrapper-2 .ikxBAC:checked:hover {
+    background-color: rgb(77, 122, 99);
+}
+/* fim checkbox ------------------------- */
 
 
-
-/* .button {
-    background-color: var(--cor-secundaria);
-    color: var(--cor-texto);
-    font-size: 18px; 
-    font-weight: 600;
-    border-radius: 5px;
-    padding: 8px;  
-    width: calc(70% - 16px);  
-    margin-bottom: 10px;
-    margin-top: 30px;
-    box-sizing: border-box; 
-    cursor: pointer; */
-
-    /* padding: 10px;    
-    border-radius: 15px; 
-    margin-left: 120px; */
-
-
-/* .button:hover{
-    background-color: var(--cor-terciaria);
-    }
-    */
-
+/* Estilizaçaõ do BOTÃO */
 .button {
     background-color: transparent;
     color: var(--cor-titulo);
-    border-radius: 10px;
-    border: 3px solid var(--cor-titulo);
+    border: 1.9px solid var(--cor-titulo);
+    border-radius: 9px;
     box-sizing: border-box; 
-    padding: 4px;
+    padding: 7px;
+    font-size: 14px; 
+    font-weight: 500;
+    margin: 8% 0 0 34%;
+    width: 34%;  
     cursor: pointer; 
-    margin-left: 40%;
 }
 
 .button:hover {
-    background-color: rgb(0, 255, 0);
-    color: rgb(12, 12, 12);
-    padding: 4px;
-    border-radius: 10px;
-    transition: background-color 0.2s;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    font-weight: 600;
+    transition: background-color 0.4s;
 }
 
 
+/* box - resultado FINAL */
+.resultado {
+    background-color: var(--cor-primaria);
+    /* max-width: 500px; */
+    display: none; 
+    padding: 26px 34px;
+    border-radius: 8px;
+    box-shadow: 0 14px 99px rgb(3, 46, 31); 
+}
+
+.resultado-final {
+    padding: 0 0 1.5% 0;
+    font-family: 600;
+    color: var(--cor-titulo);
+}
 
 .hidden {
     display: none;
 }
 
-
-.result{
-    color: #af3232;
+#show {
+    font-size: 16px;
 }
-
-
-#select_baseConversao{
-    background-color: #011720;
-    color: rgb(255, 251, 251);
-    border-color: var(--cor-terciaria);
-    border-radius: 13px;
-    padding: 5px;
-    padding-right: 195px;
-    margin-top: 7px;
-    font-size: 15px;
-    font-weight: 600;
-    box-sizing: border-box; 
-    outline: none;
-}
-
 
 #output {
     margin-top: 20px;
     padding: 10px;
     border-radius: 5px;
-    background-color: #D0D3D4;
-    border: 1px solid #63666A;
+    background-color: #d2d0d4;
+    border: 222px solid #63666A;
     text-align: left;
     display: none;
 }
 
 
-/*---------- CSS POP UP ----------*/
-
-.modal {
+/*---------- POP UP ----------*/
+.modal { 
     display: none;
     position: fixed;
     z-index: 1;
@@ -230,17 +239,28 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.418);
 }
 
 .containerPopUp {
-    background-color: #d2d0d0;
-    margin: 15% auto;
+    background-color: #c6e4d5fb;
+    margin: 13% auto;
     padding: 50px;
-    border: 1px solid #36615f;
     width: 80%;
     max-width: 450px;
-    border-radius: 5px;
+    border-radius: 8px;
+}
+
+.welcome-phrase {
+    color: var(--cor-titulo);
+    font-weight: bold;
+    margin-bottom: 4%;
+}
+
+.paragrafo-descricao {
+    color: var(--cor-primaria);
+    line-height: 18px;
+    margin-bottom: 10px;
 }
 
 .close {
@@ -248,79 +268,46 @@ body {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin: -20px 0 0 90px;
 }
 
 .close:hover,
 .close:focus {
-    color: #36615f;
+    color: var(--cor-secundaria);
     text-decoration: none;
     cursor: pointer;
 }
 
+/* Responsividade */
+@media (max-width: 468px) {
+    .header {
+        padding: 4%;
+    }
 
-/* ---------------------     */     
+    .titulo {
+        font-size: 24px;
+    }
 
+    .content {
+        max-width: 390px;
+        margin: 12% 0 0 4.5%;
+    }
 
-  .checkbox-wrapper-2 .ikxBAC {
-    appearance: none;
-    background-color: #dfe1e4;
-    border-radius: 72px;
-    border-style: none;
-    flex-shrink: 0;
-    height: 20px;
-    margin: 0;
-    position: relative;
-    width: 30px;
-  }
+    .information-span {
+        font-size: 18px;
+    }
 
-  .checkbox-wrapper-2 .ikxBAC::before {
-    bottom: -6px;
-    content: "";
-    left: -6px;
-    position: absolute;
-    right: -6px;
-    top: -6px;
-  }
+    .information input {
+        width: 110px;
+    }
 
-  .checkbox-wrapper-2 .ikxBAC,
-  .checkbox-wrapper-2 .ikxBAC::after {
-    transition: all 100ms ease-out;
-  }
+    /* Div - RESULTADO FINAL */
+    .resultado {
+        max-width: 360px;
+        margin: 8% 0 0 5%;
+    }
 
-  .checkbox-wrapper-2 .ikxBAC::after {
-    background-color: #fff;
-    border-radius: 50%;
-    content: "";
-    height: 14px;
-    left: 3px;
-    position: absolute;
-    top: 3px;
-    width: 14px;
-  }
-
-  .checkbox-wrapper-2 input[type=checkbox] {
-    cursor: default;
-  }
-
-  .checkbox-wrapper-2 .ikxBAC:hover {
-    background-color: #c9cbcd;
-    transition-duration: 0s;
-  }
-
-  .checkbox-wrapper-2 .ikxBAC:checked {
-    background-color: #6e79d6;
-  }
-
-  .checkbox-wrapper-2 .ikxBAC:checked::after {
-    background-color: #fff;
-    left: 13px;
-  }
-
-  .checkbox-wrapper-2 :focus:not(.focus-visible) {
-    outline: 0;
-  }
-
-  .checkbox-wrapper-2 .ikxBAC:checked:hover {
-    background-color: #535db3;
-  }
-
+    .modal { 
+        display: none;
+    }
+}

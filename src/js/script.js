@@ -1,22 +1,20 @@
 function Converter() {
-    
-    let mostrarResultadoFinal = h2_resultado_final.innerHTML = '&gt; resultados'
-    // h2_inserir_valor.innerHTML = 'insira o valor'
+    let mostrarResultadoFinal = h2_resultado_final.innerHTML = '&gt; resultados';
 
     let inputValue = document.getElementById("input_valorDesejado").value;
     let inputBase = document.getElementById("select_baseConversao").value;
 
     let checkBin = convertBinario.checked;
     let checkDec = convertDecimal.checked;
-    let checkOct = convertOctal.checked; let checkHex = convertHexadecimal.checked;
+    let checkOct = convertOctal.checked;
+    let checkHex = convertHexadecimal.checked;
 
     if (inputValue.trim() === "") {
         alert("Por favor, preencha os campos.");
         return;
-    } else if (checkBin == false && checkDec == false &&
-        checkOct == false && heckHex == false) {
+    } else if (!checkBin && !checkDec && !checkOct && !checkHex) {
         alert("Por favor, selecione uma ou mais bases em que deseja visualizar o resultado.");
-        return true;
+        return;
     }
 
     if (!validarEntrada(inputValue, inputBase)) {
@@ -24,55 +22,52 @@ function Converter() {
         return;
     }
 
-    let decimalValue = parseInt( inputValue, inputBase === "hexadecimal"? 16: 
-        inputBase === "octal" ? 8: 
-        inputBase === "binario"? 2 : 10
-    );
-    
+    let decimalValue = parseInt(inputValue, inputBase === "hexadecimal" ? 16 : 
+        inputBase === "octal" ? 8 : 
+        inputBase === "binario" ? 2 : 10);
+
     let outputHTML = "";
 
-    if (document.getElementById("convertDecimal").checked) {
+    if (checkDec) {
+        document.querySelector(".resultado").style.display = "block";
         document.getElementById("show").style.display = "block";
-        outputHTML += `<p>Decimal: ${decimalValue}`;
+        outputHTML += `<p style="margin-bottom:12px">Decimal: <b style="font-size:17px;">${decimalValue}</b></p>`;
     }
-    if (document.getElementById("convertBinario").checked) {
+    if (checkBin) {
+        document.querySelector(".resultado").style.display = "block";
         document.getElementById("show").style.display = "block";
-        outputHTML += `<p>Binário: ${decimalValue.toString(2)}</p>`;
+        outputHTML += `<p style="margin-bottom:12px">Binário: <b style="font-size:17px;">${decimalValue.toString(2)}</b></p>`;
     }
-    if (document.getElementById("convertOctal").checked) {
+    if (checkOct) {
+        document.querySelector(".resultado").style.display = "block";
         document.getElementById("show").style.display = "block";
-        outputHTML += `<p>Octal: ${decimalValue.toString(8)}</p>`;
+        outputHTML += `<p style="margin-bottom:12px">Octal: <b style="font-size:17px;">${decimalValue.toString(8)}</b></p>`;
     }
-    if (document.getElementById("convertHexadecimal").checked) {
+    if (checkHex) {
+        document.querySelector(".resultado").style.display = "block";
         document.getElementById("show").style.display = "block";
-        outputHTML += `<p>Hexadecimal: ${decimalValue.toString(16).toUpperCase()}`;
+        outputHTML += `<p>Hexadecimal: <b style="font-size:17px;">${decimalValue.toString(16).toUpperCase()}</b></p>`;
     }
     show.innerHTML = outputHTML;
+    outputHTML = "";
 
-    
     function validarEntrada(inputValue, inputBase) {
-        var validChars = "";
+        const validChars = {
+            decimal: "0123456789",
+            hexadecimal: "0123456789ABCDEFabcdef",
+            octal: "01234567",
+            binario: "01"
+        };
 
-        if (inputBase === "decimal") {
-            validChars = "0123456789";
-        } else if (inputBase === "hexadecimal") {
-            validChars = "0123456789ABCDEFabcdef";
-        } else if (inputBase === "octal") {
-            validChars = "01234567";
-        } else if (inputBase === "binario") {
-            validChars = "01";
-        }
-
-        for (var i = 0; i < inputValue.length; i++) {
-            if (validChars.indexOf(inputValue[i]) === -1) {
+        for (let i = 0; i < inputValue.length; i++) {
+            if (!validChars[inputBase].includes(inputValue[i])) {
                 return false;
             }
         }
-        if ((imagem.hidden = true)) {
-            return true;
-        }
+        return true;
     }
 }
+
 
 // ---------- POP UP ----------
 
@@ -80,21 +75,21 @@ function Converter() {
 var modal = document.getElementById("myPopUp");
 
 // Pega o botão que fecha o modal
-// var closeBtn = document.getElementsByClassName("close")[0];
+var closeBtn = document.getElementsByClassName("close")[0];
 
 // Mostra o modal quando a página é carregada
-// window.onload = function () {
-//     modal.style.display = "block";
-// }
+window.onload = function () {
+    modal.style.display = "block";
+}
 
 // Fecha o modal quando o usuário clica no botão de fechar
-// closeBtn.onclick = function () {
-//     modal.style.display = "none";
-// }
+closeBtn.onclick = function () {
+    modal.style.display = "none";
+}
 
 // Fecha o modal quando o usuário clica fora dele
-//     window.onclick = function (event) {
-//         if (event.target == modal) {
-//             modal.style.display = "none";
-//         }
-//     }
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
