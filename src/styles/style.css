@@ -21,13 +21,13 @@
 
 body {
     background-image: url('https://conteudo.imguol.com.br/c/entretenimento/70/2021/05/25/codigo-binario-1621982130311_v2_900x506.jpg');
-    height: 49vw;
+    height: 41vh;
 }
 
 .header {
     background-color: var(--cor-primaria);
     border-bottom: 3px solid var(--cor-secundaria);
-    padding: 1.5% 0;
+    padding: 1.3% 0;
     text-align: center;
 }
 
@@ -40,7 +40,7 @@ body {
 /* Início da caixa principal */
 .container {
     max-width: 550px;
-    margin: 4% auto;
+    margin: 3% auto;
 }
 
 .content {
@@ -104,7 +104,7 @@ body {
 }
 
 .checkbox-wrapper-2 {
-    margin-top: 2%;
+    margin-top: 3%;
 }
 
 .checkbox-wrapper-2 .ikxBAC {
@@ -198,9 +198,9 @@ body {
 /* box - resultado FINAL */
 .resultado {
     background-color: var(--cor-primaria);
-    /* max-width: 500px; */
     display: none; 
     padding: 26px 34px;
+    margin: -1% 0 110px 0;
     border-radius: 8px;
     box-shadow: 0 14px 99px rgb(3, 46, 31); 
 }
@@ -281,34 +281,72 @@ body {
 
 /* Responsividade */
 @media (max-width: 468px) {
+    body {
+        margin-bottom: 500px;
+    }
+
     .header {
         padding: 4%;
     }
 
     .titulo {
-        font-size: 24px;
+        margin-top: 2%;
+        font-size: 22px;
     }
 
     .content {
         max-width: 390px;
-        margin: 12% 0 0 4.5%;
+        margin: 8% 4% 0 4%;
     }
 
     .information-span {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     .information input {
-        width: 110px;
+        margin-top: 4%;
+        width: 210px;
+        font-size: 12px;
     }
 
+    .content-principal {
+        margin: 11% 0 7% 0;
+    }
+
+    .content-principal-span {
+        font-size: 13.3px;
+    }
+
+    .content-principal select {
+       width: 250px;
+    }
+
+    .check-convesao {
+        font-size: 14px;
+        margin-top: 100px;
+    }
+
+    .checkbox-wrapper-2 .ikxBAC {
+        height: 23px;
+        width: 36px;
+    }
+    
     /* Div - RESULTADO FINAL */
     .resultado {
         max-width: 360px;
-        margin: 8% 0 0 5%;
+        margin: 5% 4% 0 4%;
     }
 
     .modal { 
         display: none;
+    }
+
+    .containerPopUp{
+        max-width: 250px;
+        margin: 35% -4% 0 1%;
+    }
+
+    h2 {
+        font-size: 26px;
     }
 }
